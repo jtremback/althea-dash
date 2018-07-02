@@ -36,7 +36,7 @@ class Payments extends Component {
           }}
         >
           <MoneyBar avgUse={100 + 12} currentFunds={info.balance} />
-          <RefillFunds address={settings.payment.eth_address} />
+          <RefillFunds address={settings.payment.ethAddress} />
           <div
             style={{
               display: "flex",
@@ -185,10 +185,10 @@ function MoneyBar({ avgUse, currentFunds }) {
   let currentFundsPos, avgUsePos;
   const scaling = 85;
   if (currentFunds < avgUse) {
-    currentFundsPos = currentFunds / avgUse * scaling;
+    currentFundsPos = (currentFunds / avgUse) * scaling;
     avgUsePos = scaling;
   } else {
-    avgUsePos = avgUse / currentFunds * scaling;
+    avgUsePos = (avgUse / currentFunds) * scaling;
     currentFundsPos = scaling;
   }
 
