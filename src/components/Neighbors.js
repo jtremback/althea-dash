@@ -16,7 +16,9 @@ class Neighbors extends Component {
     return (
       <div>
         <h1>Neighbors</h1>
-        <div>{normNeighbors.map(neigh => <NodeInfo {...neigh} />)}</div>
+        {(normNeighbors.length > 0 && (
+          <div>{normNeighbors.map(neigh => <NodeInfo {...neigh} />)}</div>
+        )) || <div>No neighbors</div>}
       </div>
     );
   }

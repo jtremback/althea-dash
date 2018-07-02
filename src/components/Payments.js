@@ -26,6 +26,11 @@ class Payments extends Component {
   }
   render() {
     const { info, settings } = this.props.state;
+
+    if (!info || !settings) {
+      return <div>Loading...</div>;
+    }
+
     return (
       <div>
         <h1>Payments</h1>
